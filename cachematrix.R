@@ -27,6 +27,7 @@ makeCacheMatrix <- function(mat = matrix()) {
 ## mat <- matrix(1:4,2,2)
 ## preppedmat <- makeCacheMatrix(mat) ## preppedmat is a list
 ## result <- cacheSolve(preppedmat) ## this will check if we have a cached version or not
+## result ## prints the inversed matrix
 
 cacheSolve <- function(x, ...) {
   m <- x$getsolve()
@@ -36,7 +37,6 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   mat <- x$get()
-  print(typeof(mat))
   m <- solve(mat)
   x$setsolve(m)
   m
